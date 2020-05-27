@@ -107,20 +107,14 @@ public class SimpleWriteToTable {
 		AmazonDynamoDB client = AmazonDynamoDBClientBuilder.standard().withRegion("us-east-2").build();
 		DynamoDB dynamoDB = new DynamoDB(client);
 
-		Table table = dynamoDB.getTable("Test1.2");
+		Table table = dynamoDB.getTable("testNeo");
 		
 		// Build the item
 		Item item = new Item()
 		    .withPrimaryKey("Id", 1)
-		    .withString("name", "homie")
-		    .withNumber("Price", 32)
-		    .withString("Description", "he's a homie")
-		    .withString("Category", "comfort")
-		    .withString("Material", "unkown")
-		    .withBoolean("InStock",true)
-		    .withString("Genre", "n/a")
-		    .withNumber("Calories", 0)
-		    .withString("Image", "n/a");
+		    .withString("name", "Bob")
+		    .withNumber("age", 17)
+		    .withString("school", "Oak Valley");
 
 		// Write the item to the table
 		PutItemOutcome outcome = table.putItem(item);
