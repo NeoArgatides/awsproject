@@ -112,9 +112,9 @@ public class SimpleWriteToTable {
 		// Build the item
 		Item item = new Item()
 		    .withPrimaryKey("Id", 1)
-		    .withString("name", "Bob")
-		    .withNumber("age", 17)
-		    .withString("school", "Oak Valley");
+		    .withString("name", "Bobby")
+		    .withNumber("age", 18)
+		    .withString("school", "Mrs. Puff's Boating School");
 
 		// Write the item to the table
 		PutItemOutcome outcome = table.putItem(item);
